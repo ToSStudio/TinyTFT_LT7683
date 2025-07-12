@@ -1,8 +1,6 @@
 # TinyTFT_LT7683
 “Driving a 10.1 inch 1024x600 TFT with the LT7683 controller using an ATtiny85 via I2C. Possibly the smallest microcontroller ever used for such a display.”
-# TinyTFT_LT7683
 
-**Driving a 1024×600 TFT display with an ATtiny85 over I²C**
 
 ---
 
