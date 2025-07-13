@@ -4,7 +4,7 @@
 
 ---
 
-This project demonstrates how a minimal 8-bit microcontroller, the **ATtiny85**, can control a large **LT7683-based TFT display (1024x600 pixels)** via the I²C interface. It serves as a proof of concept for ultra-compact embedded systems with impressive graphical output.
+This project demonstrates how a minimal 8-bit microcontroller, the **ATtiny85**, can control a large **LT7683-based TFT display (1024x600 pixels)** via the I²C interface. Also works with the RA8876 controller. It serves as a proof of concept for ultra-compact embedded systems with impressive graphical output.
 
 ## 🧠 Highlights
 
