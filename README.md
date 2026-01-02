@@ -38,7 +38,7 @@ Surprisingly, it works reliably — even with a 10″ display.
 
 ### Notes
 
-- The ATTiny85 runs at **3.3 V**
+- The ATTiny85 runs at **3.3 V** and 8 MHz
 - The TFT module is powered from **5 V**, but all logic signals are **3.3 V**
 - I²C pull-up resistors are present on the TFT board (to 3.3 V)
 - PB0 is shared between UART TX (CH340) and I²C SDA
@@ -81,7 +81,7 @@ Current demos include:
 - Basic graphics primitives including a simulated 7-Segment character-set which can be scaled to suit.
 - UI elements and status panels
 
-Additional demos may be added over time.
+Additional demos will be added over time.
 
 ---
 
@@ -99,6 +99,7 @@ These limitations are accepted by design.
 
 - Plug-on adapter board for cleaner wiring
 - Additional demo applications
+- as I2C is up-and-running feel free to add sensors w/o using any more GPIO
 
 ---
 
