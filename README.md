@@ -1,64 +1,113 @@
 # TinyTFT_LT7683
-“Driving a 10.1 inch 1024x600 TFT with the LT7683 controller using an ATtiny85 via I2C. Possibly the smallest microcontroller ever used for such a display.”
 
+Driving a 10″ 1024×600 TFT display using an ATTiny85 over I²C.
+
+![ATTiny85 driving a 10-inch LT7683 TFT](docs/img/hero.jpg)
+
+## Overview
+
+This project demonstrates that even a very small 8-bit microcontroller,
+the **ATTiny85**, is capable of controlling a large **LT7683-based TFT display
+(1024×600 pixels, 65k colors)** over a simple **I²C interface**.
+
+The intent is not high-speed graphics or video playback, but efficient
+control of a powerful display controller for **user interfaces, meters,
+status panels, and dashboards**, using minimal hardware resources.
+
+The project started as an experiment to see how far a tiny microcontroller
+could be pushed when paired with a capable display controller.
+Surprisingly, it works reliably — even with a 10″ display.
 
 ---
 
-This project demonstrates how a minimal 8-bit microcontroller, the **ATtiny85**, can control a large **LT7683-based TFT display (1024x600 pixels)** via the I²C interface. Also works with the RA8876 controller. It serves as a proof of concept for ultra-compact embedded systems with impressive graphical output.
+## Key Characteristics
 
-## 🧠 Highlights
+- ATTiny85 (8 KB Flash, 512 B RAM)
+- LT7683 graphics controller (I²C mode)
+- No external RAM or framebuffer
+- No SPI or parallel bus
+- Very low pin count
+- Typical firmware size: ~3.5 KB
+- Suitable for static or moderately dynamic UIs
 
-- **ATtiny85** with only 8 KB Flash and 512 B RAM
-- **LT7683** graphics controller via I²C (vendor-supplied protocol)
-- **Technoblogy-style I2C bit-banged routines** for USI on Tiny85
-- Only ~3.5 KB program space used
-- Completely software-driven, no external RAM or framebuffer required
-- Can be used as the basis for graphical meters, terminals, dashboards
+---
 
-## 🛠️ Hardware Setup
+## Hardware Setup
 
-- ATtiny85 (on breakout board or DIP)
-- LT7683 10" TFT panel (1024×600)
-- I²C pull-up resistors (4.7kΩ recommended)
-- Power supply capable of sourcing **>1A** for the display
-- Optional: USB-to-serial adapter or programmer for ATtiny85
+![Simplified connection overview](docs/img/connection_overview.png)
 
-_Switching circuitry may be required to isolate the programmer from I²C lines._
+### Notes
 
-## 📂 Project Structure
+- The ATTiny85 runs at **3.3 V**
+- The TFT module is powered from **5 V**, but all logic signals are **3.3 V**
+- I²C pull-up resistors are present on the TFT board (to 3.3 V)
+- PB0 is shared between UART TX (CH340) and I²C SDA
+- No bus conflicts were observed in practice
 
-| File / Folder | Description |
-|---------------|-------------|
-| `main.ino` or `main.cpp` | ATtiny85 firmware |
-| `LT7683_TinyI2C.cpp/h` | Display driver using bit-banged I2C |
-| `README.md` | Project overview |
-| `docs/` | Images, hardware diagrams (optional) |
+This diagram shows signal intent and support components;
+it is **not a full schematic**.
 
-## 🚀 Getting Started
+---
 
-1. **Flash firmware** to the ATtiny85 using your preferred programmer.
-2. Connect the display to the correct I²C pins:
-   - SDA → Pin 5
-   - SCL → Pin 7
-3. Power the display (separately if needed).
-4. Verify startup by observing the display initialize (geometric primitives, etc.)
+## Software
 
-## 🧪 Status
+- ATTiny85 with bootloader
+- Bit-banged I²C implementation using the Tiny85 USI
+- Vendor-defined LT7683 I²C command protocol
+- No frame buffer on the microcontroller
 
-✅ I²C proof of concept  
-✅ TinyNeoPixel LED output  
-🧪 Working on timeout handling and robustness  
-🧪 WindO.ino graphical environment (planned)
+The software focuses on **command-level control** of the LT7683 rather than
+pixel streaming.
 
-## 📸 Gallery
+---
 
-_TODO: Add hardware photos and screenshots here._
+## What This Is (and Is Not)
 
-## 📝 License
+**This project is:**
+- A proof of concept
+- A reference design for minimal UI controllers
+- A demonstration of architectural limits
+
+**This project is not:**
+- A video display solution
+- A high-frame-rate graphics system
+- A drop-in replacement for SPI or RGB TFTs
+
+---
+
+## Demo Applications
+
+Current demos include:
+- Basic graphics primitives
+- UI elements and status panels
+
+Additional demos may be added over time.
+
+---
+
+## Limitations
+
+- I²C bandwidth limits full-screen updates
+- Animation must be used sparingly
+- Complex scenes require careful design
+
+These limitations are accepted by design.
+
+---
+
+## Future Work
+
+- Plug-on adapter board for cleaner wiring
+- Additional demo applications
+- Integration into the WindOino project
+
+---
+
+## License
 
 MIT License — see `LICENSE` file for details.
 
 ---
 
-> Developed by ToSSoft_Berlin 🇩🇪  
-> "Big displays on tiny chips"
+> Developed by ToSStudio (Berlin, Germany)  
+> “Big displays on tiny chips.”
