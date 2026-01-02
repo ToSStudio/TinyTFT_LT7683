@@ -59,6 +59,15 @@ it is **not a full schematic**.
 The software focuses on **command-level control** of the LT7683 rather than
 pixel streaming.
 
+### I²C implementation
+
+The ATTiny85 communicates with the LT7683 using a software I²C
+implementation based on the USI module. The approach follows the
+well-known minimalist techniques described by
+David Johnson-Davies (TechnoBlogy), adapted here for the LT7683 command
+protocol and timing requirements.
+
+
 ---
 
 ## What This Is (and Is Not)
