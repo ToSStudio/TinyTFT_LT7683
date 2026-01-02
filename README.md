@@ -2,7 +2,7 @@
 
 Driving a 10″ 1024×600 TFT display using an ATTiny85 over I²C.
 
-![ATTiny85 driving a 10-inch LT7683 TFT](docs/img/hero.jpg)
+![ATTiny85 driving a 10-inch LT7683 TFT](docs/img/hero.png)
 
 ## Overview
 
@@ -34,7 +34,7 @@ Surprisingly, it works reliably — even with a 10″ display.
 
 ## Hardware Setup
 
-![Simplified connection overview](docs/img/connection_overview.png)
+![Simplified connection overview](docs/img/connection_overview.jpg)
 
 ### Notes
 
