@@ -8,7 +8,7 @@ Driving a 10″ 1024×600 TFT display using an ATTiny85 over I²C.
 
 This project demonstrates that even a very small 8-bit microcontroller,
 the **ATTiny85**, is capable of controlling a large **LT7683-based TFT display
-(1024×600 pixels, 65k colors)** over a simple **I²C interface**.
+(1024×600 pixels, 65k colors)** over a simple **I²C interface**. The RA8875 is compatible.
 
 The intent is not high-speed graphics or video playback, but efficient
 control of a powerful display controller for **user interfaces, meters,
@@ -78,7 +78,7 @@ pixel streaming.
 ## Demo Applications
 
 Current demos include:
-- Basic graphics primitives
+- Basic graphics primitives including a simulated 7-Segment character-set which can be scaled to suit.
 - UI elements and status panels
 
 Additional demos may be added over time.
@@ -99,7 +99,6 @@ These limitations are accepted by design.
 
 - Plug-on adapter board for cleaner wiring
 - Additional demo applications
-- Integration into the WindOino project
 
 ---
 
