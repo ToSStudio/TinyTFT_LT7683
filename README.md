@@ -34,7 +34,7 @@ Surprisingly, it works reliably — even with a 10″ display.
 
 ## Hardware Setup
 
-![Simplified connection overview](docs/img/circuit.png)
+![Simplified connection overview](docs/img/circuit.jpg)
 
 ### Notes
 
