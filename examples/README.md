@@ -1,17 +1,41 @@
-# Clock Demo (ATTiny85 + LT7683 over I²C)
+# Examples
 
-This demo initializes the LT7683 in I²C mode and renders a simple clock UI.
-The time base is derived from the compile time (`__TIME__`).
+This folder contains small demonstration sketches for the **TinyTFT_LT7683** project.
 
-## Requirements
-- Arduino IDE
-- SpenceKonde ATTinyCore (ATtiny25/45/85)
-- ATTiny85 @ 8 MHz internal (tested)
-- `millis()` enabled in ATTinyCore board options
+Each example is self-contained and meant to illustrate a specific aspect of driving an
+LT7683-based 1024×600 TFT display from an **ATtiny85 over I²C**.
 
-## Hardware notes
-- TFT powered from 5 V (onboard step-down)
-- TFT logic is 3.3 V; I²C pull-ups on the TFT board are to 3.3 V
-- SDA: PB0, SCL: PB2
-- The I²C bit-banged routines are based on David Johnson-Davies' USI I²C approach.
+## Available Examples
 
+### 01_TestScreen *(recommended first)*
+A static diagnostic screen showing:
+- screen borders and coordinate system
+- origin (0,0) in the upper-left corner
+- basic graphic primitives (lines, rectangles, circles)
+- text rendering at different scales
+
+Use this sketch to verify wiring, orientation, colors, and basic functionality.
+
+### 02_ClockDemo
+A simple digital clock using large 7-segment style digits drawn from graphic primitives.
+Demonstrates:
+- efficient use of geometric drawing functions
+- large, readable numerals without a framebuffer
+- periodic screen updates over I²C
+
+### 03_Starfield
+A subtle “warp-style” starfield animation inspired by classic screen savers.
+Demonstrates:
+- direct GRAM pixel access over I²C
+- animation without external RAM or framebuffer
+- performance limits and tuning on an ATtiny85
+
+Star count and motion parameters are intentionally conservative to ensure smooth animation.
+
+## Notes
+
+- All examples target an **ATtiny85 running at 8 MHz** using I²C Fast Mode (400 kHz).
+- The LT7683 graphics controller handles all drawing; the microcontroller sends only commands and pixel data.
+- Examples are intentionally simple and meant to be modified and extended.
+
+Feel free to experiment with colors, animation parameters, and drawing routines.
