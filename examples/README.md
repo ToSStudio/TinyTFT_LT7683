@@ -38,4 +38,25 @@ Star count and motion parameters are intentionally conservative to ensure smooth
 - The LT7683 graphics controller handles all drawing; the microcontroller sends only commands and pixel data.
 - Examples are intentionally simple and meant to be modified and extended.
 
+- ## Debug Output (Serial vs I²C)
+
+`Serial.print()` / SoftwareSerial debugging is **not recommended** in these examples.
+
+On the ATtiny85, the available GPIO pins are shared between multiple functions.
+In the reference wiring, **PB0** is used both for I²C (SDA) and for a USB-to-serial
+adapter (e.g. CH340). Using SoftwareSerial on these pins will interfere with I²C
+timing and can lead to unreliable behavior or a non-responsive display.
+
+Additionally, SoftwareSerial at 8 MHz combined with frequent I²C transfers places
+a heavy timing burden on the ATtiny85.
+
+**Recommended alternatives for debugging:**
+- use the on-board LED for status indication
+- display debug information directly on the TFT
+- temporarily disable I²C while debugging serial output
+
+This project intentionally prioritizes reliable I²C communication with the
+LT7683 controller over serial debug output.
+
+
 Feel free to experiment with colors, animation parameters, and drawing routines.
