@@ -31,6 +31,7 @@ Demonstrates:
 - performance limits and tuning on an ATtiny85
 
 Star count and motion parameters are intentionally conservative to ensure smooth animation.
+Feel free to experiment with colors, animation parameters, and drawing routines.
 
 ## Notes
 
@@ -53,10 +54,9 @@ a heavy timing burden on the ATtiny85.
 **Recommended alternatives for debugging:**
 - use the on-board LED for status indication
 - display debug information directly on the TFT
-- temporarily disable I²C while debugging serial output
 
 This project intentionally prioritizes reliable I²C communication with the
 LT7683 controller over serial debug output.
 
 
-Feel free to experiment with colors, animation parameters, and drawing routines.
+
