@@ -126,53 +126,6 @@ const uint8_t initCode[][2] PROGMEM  = {
 
 };
 
-// Jörg PWM:
-
-/*
-  Noch ein wenig kommentiert und nochmals verbessert (die 14mA Einsparung aus dem Chart bei 0%)
-
-  static void setBacklightPwm(ER_TFTM0784_SPI &dsp, uint16_t value)
-  {
-    RA8876 &_dev = dsp.dsp()->getRA8876();
-
-    // BackLight brightness control : RA8876's PWM0
-    _dev.Enable_PWM0_Interrupt();          // 0Bh <= OR 0x01
-    _dev.Clear_PWM0_Interrupt_Flag();      // 0Ch <= OR 0x01
-    _dev.Mask_PWM0_Interrupt_Flag();       // 0Dh <= OR 0x01
-    _dev.Set_PWM_Prescaler(0);             // 84h <= set 0x00 (8bit)
-    _dev.Select_PWM1_Clock_Divided_By_1(); // 85h <= set 00xxxxxxb (optional)
-    _dev.Select_PWM0_Clock_Divided_By_1(); // 85h <= set xx00xxxxb
-    _dev.Select_PWM1();                    // 85h <= set xxxx10xxb (optional)
-    _dev.Select_PWM0();                    // 85h <= set xxxxxx10b
-    _dev.Disable_PWM0_Inverter();          // 86h <= AND ~0x04; use non-inverted
-    _dev.Disable_PWM0_Dead_Zone();         // 86h <= AND ~0x08; no deadzone action
-    _dev.Auto_Reload_PWM0();               // 86h <= OR 0x02
-    _dev.Set_Timer0_Dead_Zone_Length(0);   // 87h <= 0x00; just to write the reg (unused)
-    _dev.Set_Timer0_Compare_Buffer(        // 88h / 89h <= 0x00..0xff / 0x00
-        value >= 255
-            ? 255
-        : value <= 0
-            ? 0
-            : value);
-
-    // power-safe in case of 0/255 (reduced power consumption by 14mA)
-    if (value == 0)
-    {
-        // create a constant HIGH level on the ouput of Control Logic0
-        // and stop all PWM counter (saves some additional mA)
-        _dev.Set_Timer0_Count_Buffer(0); // 8Ah / 8Bh <= 0x00 / 0x00
-        _dev.Stop_PWM0();                // 86h <= AND ~0x01
-    }
-    else
-    {
-        // create the normal 1..255/255 pulse PWM
-        _dev.Set_Timer0_Count_Buffer(255); // 8Ah / 8Bh <= 0xff / 0x00
-        _dev.Start_PWM0();                 // 86h <= OR 0x01
-    }
-  }
-*/
-
-
 
 // 7-Seg scaling factor (Range: 1 -- 22)
 uint8_t sc = 4;
@@ -182,9 +135,7 @@ uint8_t sc = 4;
 // ****** Class for our LED *******
 // ================================
 class ToS_LED {
-
   public:
-
     // constructor
     ToS_LED (uint8_t pin) : m_pin(pin)  {
       DDRB |= (1 << m_pin);
@@ -204,7 +155,6 @@ class ToS_LED {
     void toggle() {
       PINB = (1 << m_pin);
     }
-
 };
 
 ToS_LED LED (4);
@@ -1167,3 +1117,4 @@ void loop() {
   delay (10);    // avoid overheating the µC
 
 }
+
