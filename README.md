@@ -20,11 +20,11 @@ Surprisingly, it works reliably — even with a 10″ display.
 
 ---
 
-
+<img align="right" width="239 height="238" src="docs/img/close_up.jpeg">
 
 ## Key Characteristics
 
-<img align="right" width="239 height="238" src="docs/img/close_up.jpeg">
+
 
 - ATTiny85 (8 KB Flash, 512 B RAM)
 - LT7683 graphics controller (I²C mode)
