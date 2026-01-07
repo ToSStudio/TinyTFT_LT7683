@@ -24,11 +24,14 @@ Surprisingly, it works reliably — even with a 10″ display.
 
 <img src="docs/img/close_up.jpeg" alt="ATtiny85 close-up" width="239" align="right">
 
-- ATTiny85 (8 KB Flash, 512 B RAM)
-- LT7683 graphics controller (I²C mode)
+- ATTiny85 (8 KB Flash, 512 Bytes RAM)
+- LT7683 / RA8876 graphics controller (I²C mode)
+- 10 Inch TFT with 1024 * 600 pixel resolution and 65 k colors
 - No external RAM or framebuffer
 - No SPI or parallel bus
 - Very low pin count
+- updateable via Bootloader
+- self-contained .INO - Files. No external libraries
 - Typical firmware size: ~3.5 KB
 - Suitable for static or moderately dynamic UIs
 
