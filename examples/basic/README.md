@@ -1,5 +1,7 @@
 # Basic Test Screen
 
+![LT7683 Basic Test Screen](../../docs/basic.jpg)
+
 This example provides a **static diagnostic test screen** for the
 **LT7683 graphics controller**, driven by an **ATtiny85 over I²C**.
 
