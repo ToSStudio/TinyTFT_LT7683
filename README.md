@@ -20,6 +20,8 @@ Surprisingly, it works reliably — even with a 10″ display.
 
 ---
 
+<img align="right" width="100" height="100" src="docs/img/close_up.jpeg">
+
 ## Key Characteristics
 
 - ATTiny85 (8 KB Flash, 512 B RAM)
