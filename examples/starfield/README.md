@@ -1,5 +1,7 @@
 # Starfield Demo
 
+![LT7683 Basic Test Screen](../../docs/img/starfield.jpeg)
+
 This example demonstrates a subtle “warp-style” starfield animation on a
 **1024×600 LT7683-based TFT display**, driven entirely by an **ATtiny85 over I²C**.
 
