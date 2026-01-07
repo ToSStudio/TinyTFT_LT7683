@@ -2,6 +2,8 @@
 
 ![LT7683 Basic Test Screen](../../docs/img/basic.jpeg)
 
+*Static diagnostic screen showing coordinate system, text scaling, and drawing primitives.*
+
 This example provides a **static diagnostic test screen** for the
 **LT7683 graphics controller**, driven by an **ATtiny85 over I²C**.
 
