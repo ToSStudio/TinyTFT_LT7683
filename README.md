@@ -65,6 +65,8 @@ it is **not a full schematic**.
 - I²C implementation using the Tiny85 USI
 - Vendor-defined LT7683 I²C command protocol
 - No frame buffer on the microcontroller
+- displaying text is based on the Print class.
+- This enables it to inherit the behaviour of the standard I/O functions such as print() to print strings and integers.
 
 The software focuses on **command-level control** of the LT7683 rather than
 pixel streaming.
