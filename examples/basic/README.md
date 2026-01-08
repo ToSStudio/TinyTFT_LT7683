@@ -36,7 +36,7 @@ The screen includes the following elements:
 
 - **Text scaling demonstration**  
   The digits `1 … 8` are rendered at increasing sizes to show
-  font scaling and readability. The pseudo-7-segments are created on-the-fly out of primitive
+  font scaling and readability. The pseudo-7-segments are created on-the-fly out of
   graphic primitives such as rectangles, arcs and circles.
 
 - **Graphic primitives**
