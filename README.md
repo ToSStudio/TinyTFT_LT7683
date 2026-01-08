@@ -62,7 +62,7 @@ it is **not a full schematic**.
 ## Software
 
 - ATTiny85 with bootloader
-- Bit-banged I²C implementation using the Tiny85 USI
+- I²C implementation using the Tiny85 USI
 - Vendor-defined LT7683 I²C command protocol
 - No frame buffer on the microcontroller
 
