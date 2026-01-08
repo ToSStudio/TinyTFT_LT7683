@@ -19,9 +19,6 @@ struct xy {
   uint16_t y;
 };
 
-// xy Pos1, Pos2;
-
-
 // ======================================
 // ****** I2C addresses of LT7683 *******
 // ======================================
@@ -499,43 +496,7 @@ class ToS_LT7683 : public Print  {
 
     }
 
-    /*
-        void setBacklightPWM (uint8_t value) {
-          // Setup PWM registers (only once needed — place in init if preferred)
-          // writeReg (0x0B, 0x01); // Enable PWM0_IRQ
-          // writeCommandData(0x0C, 0x11); // Clear PWM0_IRQ
-          // writeCommandData(0x0D, 0x01); // Mask PWM0_IRQ
-
-          // writeCommandData(0x85, 0x02); // PWM Clock ÷1, Select PWM0
-          // writeReg (0x86, 0x0B); // Enable PWM0, Auto-Reload, no inversion, no dead zone (0x0B ?)
-          // writeCommandData(0x87, 0x00); // Dead zone length = 0
-
-          if (value == 0) {
-            // Force HIGH output, no PWM toggling
-            writeReg (0x88, 0x00); // PWM High Duration
-            writeReg (0x89, 0x00); // PWM Low Duration
-            writeReg (0x8A, 0x00); // Timer0 Count High
-            writeReg (0x8B, 0x00); // Timer0 Count Low
-            writeReg (0x86, 0x00); // Stop PWM0 (bit 0 cleared)
-          } else if (value >= 255) {
-            // Constant full brightness, no toggling
-            writeReg (0x88, 0xFF);
-            writeReg (0x89, 0x00);
-            writeReg (0x8A, 0x00);
-            writeReg (0x8B, 0x00);
-            writeReg (0x86, 0x00); // Stop PWM0
-          } else {
-            // True PWM mode
-            writeReg (0x88, value);       // High duration
-            writeReg (0x89, 255 - value); // Low duration
-            writeReg (0x8A, 0xFF);        // Timer0 Count High
-            writeReg (0x8B, 0x00);        // Timer0 Count Low
-            writeReg (0x86, 0x03);        // Start PWM0 (bit 0) + Auto Reload
-          }
-        }
-    */
-
-
+  
     void setFrameAdr (uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end)  {
 
       // start
@@ -1117,4 +1078,5 @@ void loop() {
   delay (10);    // avoid overheating the µC
 
 }
+
 
