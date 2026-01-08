@@ -12,7 +12,9 @@ the **ATTiny85**, is capable of controlling a large **LT7683-based TFT display
 The Display used for this is a ER-TFT101B4-1-5553 available from BUYDISPLAY / Eastrising and was 
 ordered with 
 - 5 V power supply and
-- jumpered for I2C Pin Header Connection
+- jumpered for I2C Pin Header Connection.
+
+The display is mounted in a frame made of plywood veneered with aircraft spruce and mahogany.
 
 The intent is not high-speed graphics or video playback, but efficient
 control of a powerful display controller for **user interfaces, meters,
