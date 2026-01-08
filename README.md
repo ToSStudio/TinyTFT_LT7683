@@ -102,9 +102,11 @@ protocol and timing requirements.
 
 Current demos include:
 - Basic graphics primitives including a simulated 7-Segment character-set which can be scaled to suit.
+- the clock shown above
+- moving starfield simulation giving a 1990's WIN 3.1 screensaver
 - UI elements and status panels
 
-Additional demos will be added over time.
+
 
 ---
 
