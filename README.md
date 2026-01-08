@@ -20,7 +20,8 @@ status panels, and dashboards**, using minimal hardware resources.
 
 The project started as an experiment to see how far a tiny microcontroller
 could be pushed when paired with a capable display controller.
-Surprisingly, it works reliably — even with a 10″ display.
+Surprisingly, it works reliably — even with a 10″ display giving the user
+access to huge TFT-real estate to play with.
 
 ---
 
