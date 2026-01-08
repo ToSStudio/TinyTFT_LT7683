@@ -1081,43 +1081,6 @@ void starfieldInit(bool clearScreen = true) {
   }
 }
 
-/*
-void starfieldStep_singlePass() {
-  for (uint8_t i = 0; i < SF_N; i++) {
-    Star &s = stars[i];
-
-    // --- 1) ERASE star at current position ---
-    int16_t sx, sy;
-    if (s.z >= SF_Z_MIN && sfProject(s, sx, sy)) {
-      uint8_t sz = sfSizeFromZ(s.z);
-      tft.fore(0, 0, 0);     // background color
-      sfDrawAt(sx, sy, sz);  // erase by overdrawing in black
-    }
-
-    // --- 2) UPDATE depth / respawn if needed ---
-    if (s.z > (uint8_t)(SF_Z_MIN + SF_Z_STEP)) {
-      s.z -= SF_Z_STEP;
-    } else {
-      sfRespawn(s);
-    }
-
-    // If moved off-screen, respawn
-    if (s.z >= SF_Z_MIN) {
-      if (!sfProject(s, sx, sy)) {
-        sfRespawn(s);
-      }
-    }
-
-    // --- 3) DRAW star at new position ---
-    if (s.z >= SF_Z_MIN && sfProject(s, sx, sy)) {
-      uint8_t sz = sfSizeFromZ(s.z);
-      tft.fore(255, 255, 255);  // star color
-      sfDrawAt(sx, sy, sz);     // draw in white
-    }
-  }
-}
-*/
-
 void starfieldStep_pixels() {
   for (uint8_t i = 0; i < SF_N; i++) {
     Star &s = stars[i];
@@ -1256,3 +1219,4 @@ void loop() {
     starfieldStep_pixels();
   }
 }
+
