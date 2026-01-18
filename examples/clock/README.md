@@ -1,4 +1,4 @@
-![LT7683 Basic Test Screen](../../docs/img/clock_II.jpeg)
+!(../../docs/img/clock_II.jpeg)
 
 # Clock Demo (ATTiny85 + LT7683 over I²C)
 
