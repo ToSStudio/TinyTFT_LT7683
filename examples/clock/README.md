@@ -15,7 +15,7 @@ The time base is derived from the compile time (`__TIME__`).
 - TFT powered from 5 V (onboard step-down)
 - TFT logic is 3.3 V; I²C pull-ups on the TFT board are to 3.3 V
 - SDA: PB0, SCL: PB2
-- The I²C bit-banged routines are based on David Johnson-Davies' USI I²C approach.
+- The I²C routines are based on David Johnson-Davies' USI I²C approach.
 
 ## Hints
 - if used with the bootloader this sketch will use 100 % of program storage space.
