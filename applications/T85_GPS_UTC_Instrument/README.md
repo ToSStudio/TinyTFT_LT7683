@@ -1,7 +1,25 @@
-ATtiny85 GPS UTC Instrument
+T85 GPS UTC Instrument (Application)
 
-This folder contains a complete GPS-disciplined UTC instrument built for the TinyTFT_LT7683 project.
+This folder contains a complete, ready-to-run GPS-disciplined UTC instrument for the TinyTFT_LT7683 project.
 
-The sketch turns an ATtiny85 into a fully functional time and positioning display driving a 10" LT7683-based 1024×600 TFT over I²C.
+It drives a 10" LT7683-based 1024×600 TFT from an ATtiny85 over I²C, while decoding GPS NMEA via a custom lightweight UART.
 
-Unlike the examples folder, this is a finished application.
+Features
+
+Large 7-segment UTC time (main stage)
+
+Date + Day-Of-Week
+
+Latitude / Longitude (RMC)
+
+degrees shown with a graphical ° symbol (drawn as a circle)
+
+two-field text rendering so the ° is not overwritten
+
+Satellites (GGA)
+
+HDOP bars (GGA) → reception quality at a glance
+
+Altitude (MSL) (GGA) → right-aligned, integers only
+
+GPS state indicators (TIME-ONLY vs FIX)
